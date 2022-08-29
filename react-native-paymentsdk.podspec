@@ -22,6 +22,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.dependency "React"
-  s.dependency "ClickPay", '6.1.1'
+  s.dependency "ClickPay", '6.1.22'
 end
 

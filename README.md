@@ -11,7 +11,7 @@ Library Support:
 
 # Installation
 
-`$ npm install @paytabs/react-native-clickpay@2.2.1 --save`
+`$ npm install @paytabs/react-native-clickpay@2.2.2 --save`
 
 ## Usage
 
