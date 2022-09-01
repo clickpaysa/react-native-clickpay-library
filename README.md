@@ -1,6 +1,6 @@
 
 # react-native-clickpay
-![Version](https://img.shields.io/badge/React%20Native%20ClickPay-v2.2.1-green)
+![Version](https://img.shields.io/badge/React%20Native%20ClickPay-v1.0.0-green)
 
 React native ClickPay library is a wrapper for the native ClickPay Android and iOS SDKs, It helps you integrate with ClickPay payment gateway.
 
