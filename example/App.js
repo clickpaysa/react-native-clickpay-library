@@ -10,7 +10,7 @@
 
  import React, { Component } from 'react';
  import {Platform, StyleSheet, Text, Button, View } from 'react-native';
- import {RNPaymentSDKLibrary, PaymentSDKConfiguration, PaymentSDKBillingDetails, PaymentSDKTheme, PaymentSDKConstants} from '@clickpaysa/react-native-clickpay';
+ import {RNPaymentSDKLibrary, PaymentSDKConfiguration, PaymentSDKBillingDetails, PaymentSDKTheme, PaymentSDKConstants} from '@clickpay.sa/react-native-clickpay';
  
  const instructions = Platform.select({
    ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',

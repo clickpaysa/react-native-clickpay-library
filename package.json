@@ -1,7 +1,7 @@
 {
   "name": "@clickpay.sa/react-native-clickpay",
   "title": "React Native ClickPay",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React Native ClickPay",
   "main": "index.js",
   "files": [
