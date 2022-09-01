@@ -11,14 +11,14 @@ Library Support:
 
 # Installation
 
-`$ npm install @paytabs/react-native-clickpay@2.2.2 --save`
+`$ npm install @clickpaysa/react-native-clickpay@1.0.0 --save`
 
 ## Usage
 
 Import `react-native-clickpay`
 
 ```javascript
-import {RNPaymentSDKLibrary, PaymentSDKConfiguration, PaymentSDKBillingDetails, PaymentSDKTheme, PaymentSDKConstants} from '@paytabs/react-native-clickpay';
+import {RNPaymentSDKLibrary, PaymentSDKConfiguration, PaymentSDKBillingDetails, PaymentSDKTheme, PaymentSDKConstants} from '@clickpaysa/react-native-clickpay';
 ```
 
 ### Pay with Card

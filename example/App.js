@@ -10,7 +10,7 @@
 
  import React, { Component } from 'react';
  import {Platform, StyleSheet, Text, Button, View } from 'react-native';
- import {RNPaymentSDKLibrary, PaymentSDKConfiguration, PaymentSDKBillingDetails, PaymentSDKTheme, PaymentSDKConstants} from '@paytabs/react-native-clickpay';
+ import {RNPaymentSDKLibrary, PaymentSDKConfiguration, PaymentSDKBillingDetails, PaymentSDKTheme, PaymentSDKConstants} from '@clickpaysa/react-native-clickpay';
  
  const instructions = Platform.select({
    ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -32,9 +32,9 @@
  
    onPressPay(){
      let configuration = new PaymentSDKConfiguration();
-     configuration.profileID = "*Profile ID*"
-     configuration.serverKey= "*Server Key*"
-     configuration.clientKey = "*Client Key*"
+     configuration.profileID = "42007"
+     configuration.serverKey= "STJNLJWLDL-JBJRGGBRBD-6NHBMHTKMM"
+     configuration.clientKey = "CKKMD9-HQVQ62-6RTT2R-GRMP2B"
      configuration.cartID = "545454"
      configuration.currency = "SAR"
      configuration.cartDescription = "Flowers"

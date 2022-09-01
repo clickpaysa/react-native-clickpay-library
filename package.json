@@ -1,7 +1,7 @@
 {
-  "name": "@paytabs/react-native-clickpay",
+  "name": "@clickpaysa/react-native-clickpay",
   "title": "React Native ClickPay",
-  "version": "2.2.2",
+  "version": "1.0.0",
   "description": "React Native ClickPay",
   "main": "index.js",
   "files": [
@@ -21,8 +21,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/paytabscom/react-native-paytabs-library.git",
-    "baseUrl": "https://github.com/paytabscom/react-native-paytabs-library"
+    "url": "git+https://github.com/clickpaysa/react-native-clickpay-library.git",
+    "baseUrl": "https://github.com/clickpaysa/react-native-clickpay-library"
   },
   "keywords": [
     "react-native"
