@@ -15,7 +15,7 @@ import {
   PaymentSDKConfiguration,
   PaymentSDKBillingDetails,
   PaymentSDKSavedCardInfo,
-} from '@paytabs/react-native-paytabs';
+} from '@clickpay.sa/react-native-clickpay';
 import { PaymentSDKConstants, PaymentSDKTheme } from '../../lib/module';
 
 const instructions = Platform.select({
@@ -156,7 +156,7 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to Paytabs React-Native!</Text>
+        <Text style={styles.welcome}>Welcome to ClickPay React-Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
         <Text style={styles.instructions}>{this.state.message}</Text>

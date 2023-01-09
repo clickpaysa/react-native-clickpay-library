@@ -1,8 +1,8 @@
 
-# react-native-paytabs
-![Version](https://img.shields.io/badge/React%20Native%20Paytabs-v2.5.0-green)
+# react-native-clickpay
+![Version](https://img.shields.io/badge/React%20Native%20Clickpay-v2.5.0-green)
 
-React native paytabs library is a wrapper for the native PayTabs Android and iOS SDKs, It helps you integrate with PayTabs seamlessly.
+React native clickpay library is a wrapper for the native clickpay Android and iOS SDKs, It helps you integrate with clickpay seamlessly.
 
 Library Support:
 
@@ -17,13 +17,13 @@ Library Version:
 # Installation
 
 ```sh
-$ npm install @paytabs/react-native-paytabs@2.5.0 --save
+$ npm install @clickpay.sa/react-native-clickpay@2.5.0 --save
 ```
 
 ### Expo
 
 ```sh
-expo install @paytabs/react-native-paytabs
+expo install @clickpay.sa/react-native-clickpay
 ```
 
 ### Deprecation of ExpoKit:
@@ -54,10 +54,10 @@ Expo is no longer supported as the ExpoKit is deprecated now. Please see https:/
 
 ## Usage
 
-Import `@paytabs/react-native-paytabs`
+Import `@clickpay.sa/react-native-clickpay`
 
 ```javascript
-import {RNPaymentSDKLibrary, PaymentSDKConfiguration, PaymentSDKBillingDetails, PaymentSDKTheme, PaymentSDKConstants, PaymentSDKSavedCardInfo} from '@paytabs/react-native-paytabs';
+import {RNPaymentSDKLibrary, PaymentSDKConfiguration, PaymentSDKBillingDetails, PaymentSDKTheme, PaymentSDKConstants, PaymentSDKSavedCardInfo} from '@clickpay/react-native-clickpay';
 ```
 
 ### Pay with Card
@@ -451,19 +451,14 @@ Check our complete examples ([React-Native][example], [Expo][expoexample]).
 
 See [LICENSE][license].
 
-## Paytabs
+## ClickPay
 
 [Support][1] | [Terms of Use][2] | [Privacy Policy][3]
 
-[1]: https://www.paytabs.com/en/support/
-[2]: https://www.paytabs.com/en/terms-of-use/
-[3]: https://www.paytabs.com/en/privacy-policy/
-[license]: https://github.com/paytabscom/react-native-paytabs-library/blob/master/LICENSE
-[applepayguide]: https://github.com/paytabscom/react-native-paytabs-library/blob/master/ApplePayConfiguration.md
-[example]: https://github.com/paytabscom/react-native-paytabs-library/tree/master/example
-[expoexample]: https://github.com/paytabscom/react-native-paytabs-library/tree/master/expo-example
-[english]: https://github.com/paytabscom/paytabs-android-library-sample/blob/master/res/strings.xml
-[arabic]: https://github.com/paytabscom/paytabs-android-library-sample/blob/master/res/strings-ar.xml
-[iosenglish]: https://github.com/paytabscom/paytabs-ios-library-sample/blob/master/en.strings
-[iosarabic]: https://github.com/paytabscom/paytabs-ios-library-sample/blob/master/ar.strings
+ [1]: https://merchant.clickpay.com.sa/
+ [2]: https://merchant.clickpay.com.sa
+ [3]: https://merchant.clickpay.com.sa
+ [license]: https://github.com/paytabscom/react-native-paytabs-library/blob/clickpay/LICENSE
+ [applepayguide]: https://github.com/paytabscom/react-native-paytabs-library/blob/clickpay/ApplePayConfiguration.md
+ [example]: https://github.com/paytabscom/react-native-paytabs-library/tree/clickpay/example
 

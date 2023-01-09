@@ -1,7 +1,7 @@
 {
-  "name": "@paytabs/react-native-paytabs",
+  "name": "@clickpay.sa/react-native-clickpay",
   "version": "2.5.0",
-  "description": "Paytabs React-Native Library",
+  "description": "ClickPay React-Native Library",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
@@ -41,13 +41,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/paytabscom/react-native-paytabs-library",
-  "author": "Muhammad Alkady <muhammad.alkady@paytabs.com> (https://github.com/paytabscom)",
+  "repository": "https://github.com/clickpaysa/react-native-clickpay-library",
+  "author": "Muhammad Alkady <muhammad.alkady@paytabs.com> (https://github.com/clickpaysa)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/paytabscom/react-native-paytabs-library/issues"
+    "url": "https://github.com/clickpaysa/react-native-clickpay-librar/issues"
   },
-  "homepage": "https://github.com/paytabscom/react-native-paytabs-library#readme",
+  "homepage": "https://github.com/clickpaysa/react-native-clickpay-library#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

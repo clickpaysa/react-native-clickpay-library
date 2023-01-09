@@ -1,4 +1,4 @@
-declare module '@paytabs/react-native-paytabs' {
+declare module '@clickpay.sa/react-native-clickpay' {
   export class RNPaymentSDKLibrary {
     static startCardPayment(config): Promise<any>;
 
