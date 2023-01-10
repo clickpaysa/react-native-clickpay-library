@@ -1,6 +1,6 @@
 
 # react-native-clickpay
-![Version](https://img.shields.io/badge/React%20Native%20Clickpay-v2.5.0-green)
+![Version](https://img.shields.io/badge/React%20Native%20Clickpay-v1.3.0-green)
 
 React native clickpay library is a wrapper for the native clickpay Android and iOS SDKs, It helps you integrate with clickpay seamlessly.
 
@@ -17,13 +17,18 @@ Library Version:
 # Installation
 
 ```sh
-$ npm install @clickpay.sa/react-native-clickpay@2.5.0 --save
+$ npm install @clickpay.sa/react-native-clickpay@1.3.0 --save
 ```
 
 ### Expo
 
 ```sh
 expo install @clickpay.sa/react-native-clickpay
+```
+Then call the below to run Android or IOS
+```sh
+npx expo run:android
+npx expo run:ios
 ```
 
 ### Deprecation of ExpoKit:
