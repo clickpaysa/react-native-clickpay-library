@@ -23,5 +23,5 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.swift_version = '5.0'
   s.dependency "React"
-  s.dependency "ClickPaySDK", '6.4.1'
+  s.dependency "ClickPay", '6.4.1'
 end
