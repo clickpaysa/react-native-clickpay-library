@@ -460,6 +460,6 @@ See [LICENSE][license].
  [2]: https://merchant.clickpay.com.sa
  [3]: https://merchant.clickpay.com.sa
  [license]: https://github.com/clickpaysa/react-native-clickpay-library/blob/clickpay/LICENSE
- [applepayguide]: https://github.com/clickpaysa/react-native-clickpay-library/blob/clickpay/ApplePayConfiguration.md
+ [applepayguide]: https://github.com/clickpaysa/react-native-clickpay-library/blob/main/ApplePayConfiguration.md
  [example]: https://github.com/clickpaysa/react-native-clickpay-library/tree/clickpay/example
 
