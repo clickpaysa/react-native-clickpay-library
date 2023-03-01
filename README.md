@@ -459,7 +459,7 @@ See [LICENSE][license].
  [1]: https://merchant.clickpay.com.sa/
  [2]: https://merchant.clickpay.com.sa
  [3]: https://merchant.clickpay.com.sa
- [license]: https://github.com/paytabscom/react-native-paytabs-library/blob/clickpay/LICENSE
- [applepayguide]: https://github.com/paytabscom/react-native-paytabs-library/blob/clickpay/ApplePayConfiguration.md
- [example]: https://github.com/paytabscom/react-native-paytabs-library/tree/clickpay/example
+ [license]: https://github.com/clickpaysa/react-native-clickpay-library/blob/clickpay/LICENSE
+ [applepayguide]: https://github.com/clickpaysa/react-native-clickpay-library/blob/clickpay/ApplePayConfiguration.md
+ [example]: https://github.com/clickpaysa/react-native-clickpay-library/tree/clickpay/example
 
