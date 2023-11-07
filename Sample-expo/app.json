@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "my_clickpay-app",
+    "slug": "my_clickpay-app",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
