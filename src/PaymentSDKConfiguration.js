@@ -28,7 +28,10 @@ export default class PaymentSDKConfiguration {
     token,
     transactionReference,
     samsungToken,
-    theme
+    theme,
+    isDigitalProduct,
+    enableZeroContacts,
+    expiryTime
   ) {
     this.profileID = profileID;
     this.serverKey = serverKey;
@@ -59,5 +62,8 @@ export default class PaymentSDKConfiguration {
     this.transactionReference = transactionReference;
     this.theme = theme;
     this.samsungToken = samsungToken;
+    this.isDigitalProduct = isDigitalProduct;
+    this.enableZeroContacts = enableZeroContacts;
+    this.expiryTime = expiryTime;
   }
 }
