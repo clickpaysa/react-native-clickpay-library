@@ -134,7 +134,7 @@ dependencies {
     //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-  implementation 'sa.com.clickpay:payment-sdk:6.3.4'
+  implementation 'sa.com.clickpay:payment-sdk:6.4.5'
 // From node_modules
 }
 
