@@ -1,6 +1,6 @@
 {
   "name": "react-native-paymentsdk",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "summary": "ClickPay React-Native Library",
   "description": "react-native-paymentsdk",
   "homepage": "https://github.com/github_account/react-native-paymentsdk",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/github_account/react-native-paymentsdk.git",
-    "tag": "1.3.3"
+    "tag": "1.3.4"
   },
   "frameworks": [
     "Foundation",
@@ -31,7 +31,7 @@
 
     ],
     "ClickPay": [
-      "6.4.1"
+      "6.5.2"
     ]
   },
   "swift_version": "5.0"
