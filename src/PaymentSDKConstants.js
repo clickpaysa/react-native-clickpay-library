@@ -25,5 +25,6 @@ export default class PaymentSDKConstants {
     knetCredit: 'knetcredit',
     knetDebit: 'knetdebit',
     fawry: 'fawry',
+    tabby: 'tabby',
   };
 }
