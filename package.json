@@ -1,6 +1,6 @@
 {
   "name": "@clickpay.sa/react-native-clickpay",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "ClickPay React-Native Library",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
