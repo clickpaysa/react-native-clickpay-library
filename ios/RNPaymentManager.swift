@@ -7,19 +7,21 @@
 
 import Foundation
 import PaymentSDK
+import PassKit
+
 
 @objc(RNPaymentManager)
 class RNPaymentManager: NSObject {
     var resolve: RCTPromiseResolveBlock?
     var reject: RCTPromiseRejectBlock?
-    
+
     @objc(startCardPayment:withResolver:withRejecter:)
     func startCardPayment(paymentDetails: NSString,
                           resolve: @escaping RCTPromiseResolveBlock,
                           reject: @escaping RCTPromiseRejectBlock) -> Void {
         self.resolve = resolve
         self.reject = reject
-        
+
         let data = Data((paymentDetails as String).utf8)
         do {
             let dictionary = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String: Any]
@@ -40,7 +42,7 @@ class RNPaymentManager: NSObject {
                           reject: @escaping RCTPromiseRejectBlock) -> Void {
         self.resolve = resolve
         self.reject = reject
-        
+
         let data = Data((paymentDetails as String).utf8)
         do {
             let dictionary = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String: Any]
@@ -60,7 +62,7 @@ class RNPaymentManager: NSObject {
                           reject: @escaping RCTPromiseRejectBlock) -> Void {
         self.resolve = resolve
         self.reject = reject
-        
+
         let data = Data((paymentDetails as String).utf8)
         do {
             let dictionary = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String: Any]
@@ -81,7 +83,7 @@ class RNPaymentManager: NSObject {
                           reject: @escaping RCTPromiseRejectBlock) -> Void {
         self.resolve = resolve
         self.reject = reject
-        
+
         let data = Data((paymentDetails as String).utf8)
         let savedCardData = Data((savedCardInfo as String).utf8)
         do {
@@ -101,14 +103,14 @@ class RNPaymentManager: NSObject {
         }
     }
 
-    
+
     @objc(startApplePayPayment:withResolver:withRejecter:)
     func startApplePayPayment(paymentDetails: NSString,
                           resolve: @escaping RCTPromiseResolveBlock,
                           reject: @escaping RCTPromiseRejectBlock) -> Void {
         self.resolve = resolve
         self.reject = reject
-        
+
         let data = Data((paymentDetails as String).utf8)
         do {
             let dictionary = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String: Any]
@@ -120,14 +122,14 @@ class RNPaymentManager: NSObject {
             reject("Error", error.localizedDescription, error)
         }
     }
-    
+
     @objc(startAlternativePaymentMethod:withResolver:withRejecter:)
     func startAlternativePaymentMethod(paymentDetails: NSString,
                           resolve: @escaping RCTPromiseResolveBlock,
                           reject: @escaping RCTPromiseRejectBlock) -> Void {
         self.resolve = resolve
         self.reject = reject
-        
+
         let data = Data((paymentDetails as String).utf8)
         do {
             let dictionary = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String: Any]
@@ -139,13 +141,13 @@ class RNPaymentManager: NSObject {
             reject("Error", error.localizedDescription, error)
         }
     }
-    
+
     func getRootController() -> UIViewController? {
         let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow }) ?? UIApplication.shared.windows.first
             let topController = keyWindow?.rootViewController
             return topController
         }
-    
+
     private func generateConfiguration(dictionary: [String: Any]) -> PaymentSDKConfiguration {
         let configuration = PaymentSDKConfiguration()
         configuration.profileID = dictionary["profileID"] as? String ?? ""
@@ -176,11 +178,11 @@ class RNPaymentManager: NSObject {
            let type = TokenFormat.getType(type: tokenFormat) {
             configuration.tokenFormat = type
         }
-        
+
         if let transactionType = dictionary["transactionType"] as? String {
             configuration.transactionType = TransactionType.init(rawValue: transactionType) ?? .sale
         }
-        
+
         if let themeDictionary = dictionary["theme"] as? [String: Any],
            let theme = generateTheme(dictionary: themeDictionary) {
             configuration.theme = theme
@@ -196,7 +198,20 @@ class RNPaymentManager: NSObject {
         if let alternativePaymentMethods = dictionary["alternativePaymentMethods"] as? [String] {
             configuration.alternativePaymentMethods = generateAlternativePaymentMethods(apmsArray: alternativePaymentMethods)
         }
+         if let paymentNetworksArray = dictionary["paymentNetworks"] as? [String] {
+                      configuration.paymentNetworks = generatePaymentNetworks(paymentsArray: paymentNetworksArray)
+                  }
         return configuration
+    }
+
+ private func generatePaymentNetworks(paymentsArray: [String]) -> [PKPaymentNetwork] {
+        var networks = [PKPaymentNetwork]()
+        for paymentNetwork in paymentsArray {
+            if let network = PKPaymentNetwork.fromString(paymentNetwork) {
+                networks.append(network)
+            }
+        }
+        return networks
     }
 
     private func generateSavedCardInfo(dictionary: [String: Any]) -> PaymentSDKSavedCardInfo? {
@@ -205,8 +220,8 @@ class RNPaymentManager: NSObject {
 
        return PaymentSDKSavedCardInfo(maskedCard: maskedCard, cardType: cardType)
     }
-    
-    
+
+
     private func generateBillingDetails(dictionary: [String: Any]) -> PaymentSDKBillingDetails? {
         let billingDetails = PaymentSDKBillingDetails()
         billingDetails.name = dictionary["name"] as? String ?? ""
@@ -231,7 +246,7 @@ class RNPaymentManager: NSObject {
         shippingDetails.zip = dictionary["zip"] as? String ?? ""
         return shippingDetails
     }
-    
+
     private func generateTheme(dictionary: [String: Any]) -> PaymentSDKTheme? {
         let theme = PaymentSDKTheme.default
         if let resolvedImage = dictionary["merchantLogo"] {
@@ -287,7 +302,7 @@ class RNPaymentManager: NSObject {
         }
         return theme
     }
-    
+
     private func generateAlternativePaymentMethods(apmsArray: [String]) -> [AlternativePaymentMethod] {
         var apms = [AlternativePaymentMethod]()
         for apmValue in apmsArray {
@@ -297,7 +312,7 @@ class RNPaymentManager: NSObject {
         }
         return apms
     }
-    
+
     // to be fixed in next versions
     private func mapTokeiseType(tokeniseType: String) -> TokeniseType? {
         var type = 0
@@ -337,7 +352,7 @@ extension RNPaymentManager: PaymentManagerDelegate {
             }
         }
     }
-    
+
     func paymentManager(didCancelPayment error: Error?) {
         if let resolve = resolve {
             resolve(["Event": "CancelPayment"])

@@ -9,3 +9,4 @@ export { default as PaymentSDKShippingDetails } from './PaymentSDKShippingDetail
 export { default as PaymentSDKTheme } from './PaymentSDKTheme';
 export { default as PaymentSDKConstants } from './PaymentSDKConstants';
 export { default as PaymentSDKSavedCardInfo } from './PaymentSDKSavedCardInfo';
+export { default as PaymentSDKNetworks } from './PaymentSDKNetworks';
