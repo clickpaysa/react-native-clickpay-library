@@ -1,6 +1,6 @@
 
 # react-native-clickpay
-![Version](https://img.shields.io/badge/React%20Native%20Clickpay-v1.3.5-green)
+![Version](https://img.shields.io/badge/React%20Native%20Clickpay-v1.3.6-green)
 
 React native clickpay library is a wrapper for the native clickpay Android and iOS SDKs, It helps you integrate with clickpay seamlessly.
 
@@ -17,7 +17,7 @@ Library Version:
 # Installation
 
 ```sh
-$ npm install @clickpay.sa/react-native-clickpay@1.3.5--save
+$ npm install @clickpay.sa/react-native-clickpay@1.3.6--save
 ```
 
 ### Expo
@@ -219,6 +219,15 @@ let configuration = new PaymentSDKConfiguration();
     configuration.amount = 20
     configuration.screenTitle = "Pay with Card"
     configuration.merchantIdentifier = "merchant.com.bundleID"
+
+    //ignore this if you want to use default Networks
+
+    const paymentNetworks: PaymentSDKNetworks[] = [
+     PaymentSDKNetworks.VISA
+     PaymentSDKNetworks.DISCOVER
+    ];
+
+    configuration.paymentNetworks = paymentNetworks
 
 ```
 
