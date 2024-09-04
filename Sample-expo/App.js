@@ -15,6 +15,7 @@ import {
   PaymentSDKConfiguration,
   PaymentSDKBillingDetails,
   PaymentSDKSavedCardInfo,
+  PaymentSDKNetworks,
 } from '@clickpay.sa/react-native-clickpay';
 
 const instructions = Platform.select({
@@ -35,6 +36,9 @@ configuration.merchantCountryCode = 'SA';
 configuration.merchantName = 'Flowers Store';
 configuration.amount = 20;
 configuration.screenTitle = 'Pay with Card';
+
+const selectedNetworks = [PaymentSDKNetworks.DISCOVER];
+configuration.paymentNetworks = selectedNetworks;
 
 let billingDetails = new PaymentSDKBillingDetails(
   'Jones Smith',
