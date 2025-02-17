@@ -27,10 +27,10 @@ const instructions = Platform.select({
   android: 'Double tap R on your keyboard to reload,\n' + 'Shake or press menu button for dev menu',
 });
 let configuration = new PaymentSDKConfiguration();
-configuration.profileID = '42349';
-configuration.serverKey = 'SLJNLK92TH-JGDLKLM9TR-KH62LRBK6J';
-configuration.clientKey = 'CQKMDV-MDTK6T-DBKBNP-2HHR79';
-configuration.cartID = 'sdf';
+configuration.profileID = 'ProfileId';
+configuration.serverKey = 'ServerKey';
+configuration.clientKey = 'clientKey';
+configuration.cartID = '****';
 configuration.currency = 'SAR';
 configuration.cartDescription = 'Flowers';
 configuration.merchantCountryCode = 'SA';
