@@ -11,13 +11,13 @@ Library Support:
 
 Library Version:
 
-* [x] React Version: 18.1.0
-* [x] React-Native Version: 0.70.6
+* [x] React Version: 22.14.0
+* [x] React-Native Version: 0.77.0
 
 # Installation
 
 ```sh
-$ npm install @clickpay.sa/react-native-clickpay@1.3.7 --save
+$ npm install @clickpay.sa/react-native-clickpay@1.3.8 --save
 ```
 
 ### Expo
@@ -176,28 +176,6 @@ RNPaymentSDKLibrary.start3DSecureTokenizedCardPayment(
 
 ```
 <img width="197" alt="rec 3ds" src="https://user-images.githubusercontent.com/17829232/188836295-d8d48978-a80f-40d3-bda3-439423fcdec0.png">
-
-
-# 4- Pay with saved card
-Start payment by calling `startPaymentWithSavedCards` method and handle the transaction details
-
-```javascript
-
-RNPaymentSDKLibrary.startPaymentWithSavedCards(JSON.stringify(configuration),
-support3DsBool).then( result => {
-      if(result["PaymentDetails"] != null) { // Handle transaction details
-        let paymentDetails = result["PaymentDetails"]
-        console.log(paymentDetails)
-      } else if(result["Event"] == "CancelPayment") { // Handle events
-        console.log("Cancel Payment Event")
-      }
-     }, function(error) { // Handle error
-      console.log(error)
-     });
-
-```
-<img width="197" alt="rec 3ds" src="https://user-images.githubusercontent.com/17829232/190152848-bfc83f8c-1a4b-4a55-99ec-af3c22a3de66.png">
-
 
 ### Pay with Apple Pay
 
@@ -404,31 +382,64 @@ configuration.theme = theme
 
 - **Theme**: <br />Edit your `styles.xml` to customize the theme.
 
-````xml
+#### Example of Overriding Colors and Dimens:
+
+```xml
 <resources>
-  // to override colors
-     <color name="payment_sdk_primary_color">#5C13DF</color>
-     <color name="payment_sdk_secondary_color">#FFC107</color>
-     <color name="payment_sdk_primary_font_color">#111112</color>
-     <color name="payment_sdk_secondary_font_color">#6D6C70</color>
-     <color name="payment_sdk_separators_color">#FFC107</color>
-     <color name="payment_sdk_stroke_color">#673AB7</color>
-     <color name="payment_sdk_button_text_color">#FFF</color>
-     <color name="payment_sdk_title_text_color">#FFF</color>
-     <color name="payment_sdk_button_background_color">#3F51B5</color>
-     <color name="payment_sdk_background_color">#F9FAFD</color>
-     <color name="payment_sdk_card_background_color">#F9FAFD</color>
+    <!-- Override colors -->
+    <color name="payment_sdk_primary_color">#ffffff</color>
+    <color name="payment_sdk_secondary_color">#0073bc</color>
+    <color name="payment_sdk_status_bar_color">#444647</color>
+    <color name="payment_sdk_primary_font_color">#4c4c4c</color>
+    <color name="payment_sdk_secondary_font_color">#0073bc</color>
+    <color name="payment_sdk_hint_font_color">#a5a5a5</color>
+    <color name="payment_sdk_stroke_color">#e1e1e1</color>
+    <color name="payment_sdk_button_text_color">#FFF</color>
+    <color name="payment_sdk_title_text_color">#1e1e1e</color>
+    <color name="payment_sdk_button_background_color">#0073bc</color>
+    <color name="payment_sdk_background_color">#F9FAFD</color>
+    <color name="payment_sdk_blue_F2FAFD">#F2FAFD</color>
+    <color name="payment_sdk_error_text_color">#EC2213</color>
+    <color name="payment_sdk_back_black_dim">#4D6E6E6E</color>
+    <color name="payment_sdk_input_field_background_color">#FFFFFFFF</color>
+    <color name="payment_sdk_enabled_switch_track_color">#00000000</color>
+    <color name="payment_sdk_enabled_switch_handle_color">#3db39e</color>
+    <color name="payment_sdk_disabled_switch_track_color">#00000000</color>
+    <color name="payment_sdk_disabled_switch_handle_color">#c7c7c7</color>
+    <color name="payment_sdk_switch_stroke_color">#4c4c4c</color>
+    <color name="payment_sdk_amount_font_color">#4c4c4c</color>
+    <color name="payment_sdk_original_amount_font_color">#a5a5a5</color>
+    <color name="payment_sdk_billing_header_background_color">#0073bc</color>
+    <color name="payment_sdk_billing_text_color">#FFF</color>
 
-  // to override dimens
-     <dimen name="payment_sdk_primary_font_size">17sp</dimen>
-     <dimen name="payment_sdk_secondary_font_size">15sp</dimen>
-     <dimen name="payment_sdk_separator_thickness">1dp</dimen>
-     <dimen name="payment_sdk_stroke_thickness">.5dp</dimen>
-     <dimen name="payment_sdk_input_corner_radius">8dp</dimen>
-     <dimen name="payment_sdk_button_corner_radius">8dp</dimen>
+    <!-- Override dimens -->
+    <dimen name="payment_sdk_title_font_size">18sp</dimen>
+    <dimen name="payment_sdk_title_margin">24dp</dimen>
+    <dimen name="payment_sdk_primary_font_size">16sp</dimen>
+    <dimen name="payment_sdk_secondary_font_size">16sp</dimen>
+    <dimen name="payment_sdk_button_font_size">16sp</dimen>
+    <dimen name="payment_sdk_separator_thickness">1dp</dimen>
+    <dimen name="payment_sdk_stroke_thickness">.5dp</dimen>
+    <dimen name="payment_sdk_input_corner_radius">8dp</dimen>
+    <dimen name="payment_sdk_card_corner_radius">8dp</dimen>
+    <dimen name="payment_sdk_card_margin">16dp</dimen>
+    <dimen name="payment_sdk_billing_header_corner_radius">0dp</dimen>
+    <dimen name="payment_sdk_billing_header_margin">0dp</dimen>
+    <dimen name="payment_sdk_button_corner_radius">8dp</dimen>
+    <dimen name="payment_sdk_error_font_size">12sp</dimen>
+    <dimen name="payment_sdk_amount_font_size">16sp</dimen>
 
+    <!-- Override styles -->
+    <style name="PaymentSdkTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <!-- Hides the payment screen title background -->
+        <item name="payment_sdk_hideScreenTitleBackground">true</item>
+        <!-- Sets the alignment of the payment screen title [start-end-center] -->
+        <item name="payment_sdk_screenTitleAlignment">start</item>
+        <!-- Hides the card and button shadows -->
+        <item name="payment_sdk_hideViewsShadow">true</item>
+    </style>
 </resources>
-````
+```
 - **Merchant Logo**:
 
 ```javascript

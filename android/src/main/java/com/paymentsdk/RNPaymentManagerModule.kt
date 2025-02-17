@@ -89,28 +89,6 @@ class RNPaymentManagerModule(private val reactContext: ReactApplicationContext) 
     }
   }
 
-  @ReactMethod
-  fun startPaymentWithSavedCards(
-    arguments: String,
-    support3DS: Boolean,
-    promise: Promise,
-  ) {
-    this.promise = promise
-    try {
-      val paymentDetails = JSONObject(arguments)
-      val configBuilder = createConfiguration(paymentDetails)
-      if (!paymentDetails.isNull("theme")) {
-        if (paymentDetails.optJSONObject("theme")?.isNull("merchantLogo") == false) {
-          val iconUri = paymentDetails.optJSONObject("theme")?.optJSONObject("merchantLogo")?.optString("uri")
-          configBuilder.setMerchantIcon(iconUri)
-        }
-      }
-      startSavedCardPayment(paymentDetails, support3DS, configBuilder)
-    } catch (e: Exception) {
-      promise.reject("Error", e.message, Throwable(e.message))
-    }
-  }
-
   private fun startPayment(paymentDetails: JSONObject, configBuilder: PaymentSdkConfigBuilder) {
     val samsungToken = paymentDetails.optString("samsungToken")
     if (samsungToken.isNotEmpty()) PaymentSdkActivity.startSamsungPayment(reactContext.currentActivity!!, configBuilder.build(), samsungToken, this) else PaymentSdkActivity.startCardPayment(reactContext.currentActivity!!, configBuilder.build(), this)
@@ -134,15 +112,6 @@ class RNPaymentManagerModule(private val reactContext: ReactApplicationContext) 
   ) {
     val samsungToken = paymentDetails.optString("samsungToken")
     PaymentSdkActivity.start3DSecureTokenizedCardPayment(reactContext.currentActivity!!, configBuilder.build(), savedCardInfo, token, this)
-  }
-
-  private fun startSavedCardPayment(
-    paymentDetails: JSONObject,
-    support3DS: Boolean,
-    configBuilder: PaymentSdkConfigBuilder,
-  ) {
-    val samsungToken = paymentDetails.optString("samsungToken")
-    PaymentSdkActivity.startPaymentWithSavedCards(reactContext.currentActivity!!, configBuilder.build(), support3DS, this)
   }
 
   @ReactMethod

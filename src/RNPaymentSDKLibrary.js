@@ -51,20 +51,6 @@ export default class RNPaymentSDKLibrary {
     });
   }
 
-  static startPaymentWithSavedCards(config, support3DS) {
-    return new Promise((resolver, reject) => {
-      const RNPaymentManager = NativeModules.RNPaymentManager;
-      RNPaymentManager.startPaymentWithSavedCards(config, support3DS).then(
-        (result) => {
-          resolver(result);
-        },
-        function (error) {
-          reject(error);
-        }
-      );
-    });
-  }
-
   static startApplePayPayment(config) {
     return new Promise((resolver, reject) => {
       const RNPaymentManager = NativeModules.RNPaymentManager;
